@@ -1,0 +1,13 @@
+{
+  "app": {
+    "id": "my-app",
+    "name": "My Application",
+    "debug": true
+  },
+  "mysql": {
+    "host": "localhost",
+    "database": "db",
+    "username": "user",
+    "password": "pass"
+  }
+}
