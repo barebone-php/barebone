@@ -7,5 +7,6 @@ Router::get('/hello/{name}', 'Example:hello');
 Router::get('/json/{name}', 'Example:json');
 Router::get('/google', 'Example:google');
 Router::get('/session', 'Example:session');
+Router::get('/logger', 'Example:logger');
 
 

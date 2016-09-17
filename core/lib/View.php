@@ -23,7 +23,7 @@ class View
         if (null === self::$instance) {
             self::$instance = new Blade(
                 APP_ROOT . 'views',
-                PROJECT_ROOT . 'cache'
+                PROJECT_ROOT . 'tmp' . DS . 'cache'
             );
         }
         return self::$instance->view()->make($templateName, $data)->render();

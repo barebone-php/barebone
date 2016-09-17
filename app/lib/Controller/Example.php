@@ -50,4 +50,19 @@ class Example extends AppController {
 
         return $this->renderJSON(compact('session_time'));
     }
+
+
+
+    /**
+     * Write and read to a session
+     */
+    public function logger()
+    {
+        $this->log('example log from /logger');
+
+        return $this->renderJSON([
+            'time' => time(),
+            'logged' => 'look in ./tmp/logs/app.log'
+        ]);
+    }
 }

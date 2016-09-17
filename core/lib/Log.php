@@ -18,8 +18,9 @@ class Log {
     public static function getInstance()
     {
         if (null === self::$instance) {
+            $path = PROJECT_ROOT . 'tmp' . DS . 'logs' .DS . 'app.log';
+
             $logger = new Monolog(Config::get('app.id'));
-            $path = APP_ROOT . DS . 'logs' .DS . 'app.log';
             $file_handler = new StreamHandler($path);
             $logger->pushHandler($file_handler);
     
