@@ -1,10 +1,12 @@
 <?php
 namespace App\Controller;
 
+use \Barebone\Session;
+
 class Example extends AppController {
 
     /**
-     * @return string|\Slim\Http\Response
+     * Render a static template
      */
     public function index()
     {
@@ -12,15 +14,17 @@ class Example extends AppController {
     }
 
     /**
-     * @return string|\Slim\Http\Response
+     * Pass variables to a template
      */
     public function hello($name)
     {
-        return $this->render('examples/hello', compact('name'));
+        $vars = ['name' => $name];
+
+        return $this->render('examples/hello', $vars);
     }
 
     /**
-     * @return string|\Slim\Http\Response
+     * Render object as "application/json"
      */
     public function json($name)
     {
@@ -28,11 +32,22 @@ class Example extends AppController {
     }
 
     /**
-     * @return string|\Slim\Http\Response
+     * Redirect the user to a different url
      */
     public function google()
     {
         return $this->redirect('https://google.com');
     }
 
+    /**
+     * Write and read to a session
+     */
+    public function session()
+    {
+        Session::set('time', time());
+
+        $session_time = Session::get('time');
+
+        return $this->renderJSON(compact('session_time'));
+    }
 }
