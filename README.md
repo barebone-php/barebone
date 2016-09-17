@@ -31,7 +31,7 @@ You can write from models and controllers to a log in `/app/logs/`
 
 ### Frontend
 
-Install gulp with npm and develop js/css code in `/app/frontend`
+Get gulp with "npm install" in `/app/` and develop asset code in `/app/frontend`
 
 ### Hosting
 
