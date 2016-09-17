@@ -1,45 +1,53 @@
 # barebone
-Simple MVC Framework for building PHP Websites
+
+Simple MVC Framework for building PHP web applications.
+
+
+## At a glance
 
 ### Configuration
 
 Setup your database connection `config.json`
 
-### Models (\Barebone\Model)
+### Models
 
 Define your models as needed in `/app/classes/Model`
 
-### Controllers (\Barebone\Controller)
+### Controllers
 
 Write your controller actions in `/app/classes/Controller`
 
-### Views (\Barebone\View)
+### Views
 
 Add as many views as referenced in your controllers in `/app/views`.
 
-### Routing (\Barebone\Router)
+### Routing
 
 Connect your controller actions to urls in `routes.php`
 
-### Logging ($this->log(...))
+### Logging
 
 You can write from models and controllers to a log in `/app/logs/`
 
-### Frontend (browserify, sass) 
+### Frontend
 
-Install gulp with npm and develop frontend code in `/app/frontend`
+Install gulp with npm and develop js/css code in `/app/frontend`
 
 ### Hosting
 
 Upload everything and point your virtual host to `/public/`
 
-## Behind the scenes
+## Status
 
-All the basics are covered.
+This is an early build. There are no tests yet and the API may change.
+But i am pretty confident that i am close to finalizing the MVC. In the next
+updates i will focus on enhancements like Session handling.
+ 
+## Contributing
 
-- Eloquent as ORM
-- Blade as Template Engine
-- Slim for Routing
-- Elixir as JS/CSS Preprocessor
-- Monolog for Logging
+Any PR is welcome. If you find issues, please report.
+
+## License 
+
+The MIT License
 
