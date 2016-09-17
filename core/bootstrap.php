@@ -18,7 +18,7 @@ define('CORE_ROOT', PROJECT_ROOT . 'core' . DS);
 | Require Composer Autoloader
 |--------------------------------------------------------------------------
 */
-require_once PROJECT_ROOT . 'vendor' . DS . 'autoload.php';
+require_once __DIR__ . DS . 'vendor' . DS . 'autoload.php';
 
 /*
 |--------------------------------------------------------------------------

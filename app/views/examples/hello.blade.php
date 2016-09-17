@@ -1,3 +1,7 @@
+<!--
+View File for "Example.php" Controller.
+You can delete or rename it and start your own naming scheme
+-->
 @extends('layouts.default')
 @section('content')
 

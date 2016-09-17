@@ -3,7 +3,6 @@
   "description": "MVC Web Framework",
   "keywords": [ ],
   "license": "MIT",
-  "type": "project",
   "minimum-stability" : "dev",
   "prefer-stable" : true,
   "require": {
@@ -17,8 +16,8 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "app/classes/",
-      "Barebone\\": "core/classes/"
+      "App\\": "../app/lib/",
+      "Barebone\\": "./lib/"
     }
   },
   "config": {

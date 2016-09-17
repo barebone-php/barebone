@@ -45,7 +45,7 @@ class Router {
 
             $container['errorHandler'] = function ($c) {
                 return function (\Slim\Http\Request $request, $response, $exception) use ($c) {
-                    $html = View::render('app/error', ['message' => $exception ? $exception->getMessage() : 'unknown error']);
+                    $html = View::render('router/error', ['message' => $exception ? $exception->getMessage() : 'unknown error']);
                     return $c['response']->withStatus(500)
                         ->withHeader('Content-Type', 'text/html')
                         ->write($html);
@@ -54,7 +54,7 @@ class Router {
 
             $container['notFoundHandler'] = function ($c) {
                 return function (\Slim\Http\Request $request, $response) use ($c) {
-                    $html = View::render('app/error404', ['url' => $request->getUri()]);
+                    $html = View::render('router/error404', ['url' => $request->getUri()]);
                     return $c['response']->withStatus(404)
                         ->withHeader('Content-Type', 'text/html')
                         ->write($html);
@@ -63,7 +63,7 @@ class Router {
 
             $container['notAllowedHandler'] = function ($c) {
                 return function (\Slim\Http\Request $request, $response, $methods) use ($c) {
-                    $html = View::render('app/error405', ['allowed' => $methods]);
+                    $html = View::render('router/error405', ['allowed' => $methods]);
                     return $c['response']
                         ->withStatus(405)
                         ->withHeader('Allow', implode(', ', $methods))

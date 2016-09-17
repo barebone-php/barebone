@@ -2,8 +2,9 @@
 /**
  * Here you can define your routes.
  */
-Router::get('/', 'Site:index');
-Router::get('/hello/{name}', 'Site:hello');
-Router::get('/google', 'Site:google');
+Router::get('/', 'Example:index');
+Router::get('/hello/{name}', 'Example:hello');
+Router::get('/json/{name}', 'Example:json');
+Router::get('/google', 'Example:google');
 
 
