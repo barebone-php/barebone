@@ -3,29 +3,43 @@ Simple MVC Framework for building PHP Websites
 
 ### Configuration
 
-Everything happens in config.json and routes.php
+Setup your database connection `config.json`
 
-### Models
+### Models (\Barebone\Model)
 
-Define your models as needed in /app/classes/Model
+Define your models as needed in `/app/classes/Model`
 
-### Controllers
+### Controllers (\Barebone\Controller)
 
-Write your controller actions in /app/classes/Controller
+Write your controller actions in `/app/classes/Controller`
 
-### Views
+### Views (\Barebone\View)
 
-Add as many views as referenced in your controllers in /app/views
+Add as many views as referenced in your controllers in `/app/views`.
 
-### Javascript and SASS 
+### Routing (\Barebone\Router)
 
-Install gulp with npm and develope frontend code in /app/frontend
+Connect your controller actions to urls in `routes.php`
+
+### Logging ($this->log(...))
+
+You can write from models and controllers to a log in `/app/logs/`
+
+### Frontend (browserify, sass) 
+
+Install gulp with npm and develop frontend code in `/app/frontend`
 
 ### Hosting
 
-Upload everything and point your virtual host to /public/
+Upload everything and point your virtual host to `/public/`
 
-### Logging
+## Behind the scenes
 
-You can write from models and controllers to a log in /app/logs/
+All the basics are covered.
+
+- Eloquent as ORM
+- Blade as Template Engine
+- Slim for Routing
+- Elixir as JS/CSS Preprocessor
+- Monolog for Logging
 
