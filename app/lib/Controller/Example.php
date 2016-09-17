@@ -1,8 +1,6 @@
 <?php
 namespace App\Controller;
 
-use \Barebone\Session;
-
 class Example extends AppController {
 
     /**
@@ -42,11 +40,11 @@ class Example extends AppController {
     /**
      * Write and read to a session
      */
-    public function session()
+    public function sessiontime()
     {
-        Session::set('time', time());
+        $this->session->set('time', time());
 
-        $session_time = Session::get('time');
+        $session_time = $this->session->get('time');
 
         return $this->renderJSON(compact('session_time'));
     }
