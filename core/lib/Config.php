@@ -12,9 +12,10 @@ class Config {
 
     /**
      * Instantiate Loader
-     * @return Segment
+     *
+     * @return \Noodlehaus\Config
      */
-    public static function getInstance()
+    public static function loaded()
     {
         if (null === self::$instance) {
             $path = APP_ROOT . DS . 'config.json';
@@ -28,16 +29,27 @@ class Config {
     /**
      * Read configuration value
      *
-     * @param string $key Configuration key path
+     * @param string $key path
 	 * @param mixed $default Default value if key is empty/not-found
      * @return mixed
      */
     public static function get($key = '', $default = null)
     {
-		if (!self::getInstance()->has($key)) {
+		if (!self::has($key)) {
 			return $default;
 		}
-        return self::getInstance()->get($key);
+        return self::loaded()->get($key);
+    }
+
+    /**
+     * Check if key path exists
+     *
+     * @param string $key path
+     * @return boolean
+     */
+    public static function has($key = '')
+    {
+        return self::loaded()->has($key);
     }
 
     /**
@@ -47,7 +59,7 @@ class Config {
      */
     public static function all()
     {
-        return self::getInstance()->all();
+        return self::loaded()->all();
     }
 			
 }
