@@ -6,6 +6,6 @@ You can delete or rename it and start your own naming scheme
 @section('content')
 
     <h1>Hello World!</h1>
-    <p>The default route worked. Edit this template in <code>app/views/site/</code></p>
+    <p>The default route worked. Edit this template in <code>app/views/examples/</code></p>
 
 @endsection
