@@ -8,7 +8,22 @@ class Config {
     /**
      * @var \Noodlehaus\Config
      */
-    private static $config = null;
+    private static $instance = null;
+
+    /**
+     * Instantiate Loader
+     * @return Segment
+     */
+    public static function getInstance()
+    {
+        if (null === self::$instance) {
+            $path = APP_ROOT . DS . 'config.json';
+            $loader = new Loader($path);
+
+            self::$instance = $loader;
+        }
+        return self::$instance;
+    }
 
     /**
      * Read configuration value
@@ -17,15 +32,12 @@ class Config {
 	 * @param mixed $default Default value if key is empty/not-found
      * @return mixed
      */
-    public static function get($key, $default = null)
+    public static function get($key = '', $default = null)
     {
-        if (null === self::$config) {
-            self::$config = new Loader(APP_ROOT . DS . 'config.json');
-        }
-		if (!self::$config->has($key)) {
+		if (!self::getInstance()->has($key)) {
 			return $default;
 		}
-        return self::$config->get($key);
+        return self::getInstance()->get($key);
     }
 
     /**
@@ -35,10 +47,7 @@ class Config {
      */
     public static function all()
     {
-        if (null === self::$config) {
-            self::$config = new Loader(APP_ROOT . DS . 'config.json');
-        }
-        return self::$config->all();
+        return self::getInstance()->all();
     }
 			
 }

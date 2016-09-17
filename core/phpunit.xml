@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    colors="true"
+    bootstrap="./bootstrap.php"
+    syntaxCheck="false"
+    printerFile="vendor/whatthejeff/nyancat-phpunit-resultprinter/src/NyanCat/PHPUnit/ResultPrinter.php"
+    printerClass="NyanCat\PHPUnit\ResultPrinter">
+    <testsuites>
+        <testsuite name="Barebone PHP Testsuite">
+            <directory suffix=".php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>./lib</directory>
+        </whitelist>
+    </filter>
+</phpunit>

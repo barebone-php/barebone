@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-phpunit": "^0.3.6"
+  }
+}
