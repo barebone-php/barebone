@@ -1,13 +1,17 @@
 {
-  "app": {
-    "id": "my-app",
-    "name": "My Application",
-    "debug": true
-  },
-  "mysql": {
-    "host": "localhost",
-    "database": "db",
-    "username": "user",
-    "password": "pass"
-  }
+    "app": {
+        "id": "my-app",
+        "name": "My Application",
+        "environment": "development",
+        "debug": true
+    },
+    "mysql": {
+        "host": "localhost",
+        "database": "test",
+        "username": "mysql_user",
+        "password": "mysql_pass",
+        "port": "3306",
+        "charset": "utf8",
+        "collation": "utf8_unicode_ci"
+    }
 }
