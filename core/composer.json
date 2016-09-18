@@ -1,10 +1,21 @@
 {
-  "name": "m3nt0r/barebone-core",
+  "name": "barebone/barebone-core",
   "description": "MVC Web Framework",
-  "homepage": "https://github.com/m3nt0r/barebone",
-  "version": "0.1.0",
-  "type": "library",
+  "keywords": ["framework", "mvc", "barebone"],
+  "type": "project",
   "license": "MIT",
+  "minimum-stability" : "dev",
+  "prefer-stable" : true,
+  "config": {
+    "preferred-install": "dist"
+  },
+  "authors": [
+    {
+      "name": "Kjell Bublitz",
+      "email": "kjbbtz@gmail.com",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "php": ">=5.5.0",
     "illuminate/database": "^5.3",
@@ -28,11 +39,9 @@
       "App\\": "../app/lib/"
     }
   },
-  "authors": [
-    {
-      "name": "Kjell Bublitz",
-      "email": "kjbbtz@gmail.com",
-      "role": "Developer"
-    }
-  ]
+  "scripts": {
+    "post-install-cmd": [
+      "@composer dump-autoload -o"
+    ]
+  }
 }
