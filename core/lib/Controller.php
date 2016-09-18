@@ -11,10 +11,7 @@ use Slim\Container as ContainerInterface;
  */
 class Controller
 {
-    /**
-     * Expose Traits
-     */
-    use Core;
+    use LogTrait;
 
     /**
      * @var \Slim\Http\Environment
