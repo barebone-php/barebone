@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         dir: 'tests/'
       },
       options: {
-        bin: 'vendor/bin/phpunit',
+        bin: '../vendor/bin/phpunit',
         bootstrap: './bootstrap.php',
         colors: true
       }

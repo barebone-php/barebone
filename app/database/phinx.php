@@ -1,5 +1,6 @@
 <?php
-require __DIR__ . '/../../core/vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
+
 use \Barebone\Config;
 
 $environment = Config::read('app.environment', 'development');
