@@ -1,13 +1,10 @@
 # Barebone Core Lib
 
-## Dependencies
+## Testing
 
 Install all required packages with:
 
-    $ composer install
     $ npm install
-
-## Testing
 
 You can run tests with `phpunit` directly or use the provided grunt-task, which
 will also run tests whenever a PHP file changes.
