@@ -11,6 +11,12 @@ class Log {
      */
     private static $instance = null;
 
+
+    /**
+     * @var \Monolog\Logger
+     */
+    public static $filepath = null;
+
     /**
      * Instantiate Monolog
      * @return Monolog
@@ -18,15 +24,21 @@ class Log {
     public static function getInstance()
     {
         if (null === self::$instance) {
-            $path = PROJECT_ROOT . 'tmp' . DS . 'logs' .DS . 'app.log';
-
             $logger = new Monolog(Config::get('app.id'));
-            $file_handler = new StreamHandler($path);
+            $file_handler = new StreamHandler(self::getFilepath());
             $logger->pushHandler($file_handler);
     
             self::$instance = $logger;
         }
         return self::$instance;
+    }
+
+    /**
+     * @return string full path to log file
+     */
+    public static function getFilepath()
+    {
+        return PROJECT_ROOT . 'tmp' . DS . 'logs' .DS . 'app.log';
     }
 
     /**
