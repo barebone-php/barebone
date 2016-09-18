@@ -21,8 +21,10 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "../app/lib/",
-      "Barebone\\": "./lib/"
+      "Barebone\\": "./lib/",
+      "App\\Controller\\": "../app/controllers/",
+      "App\\Model\\": "../app/models/",
+      "App\\": "../app/lib/"
     }
   },
   "config": {

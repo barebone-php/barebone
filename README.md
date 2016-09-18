@@ -11,11 +11,15 @@ Setup your application details and database connection `config.json`
 
 #### Models
 
-Define your models as needed in `/app/classes/Model`
+Define your models as needed in `/app/models`
 
 #### Controllers
 
-Write your controller actions in `/app/classes/Controller`
+Write your controller actions in `/app/controllers`
+
+#### Libraries
+
+Anything else under the namespace `App` can be created in `/app/lib`
 
 #### Views
 
