@@ -10,7 +10,7 @@ class ConfigTest extends TestCase
         $this->assertClassHasStaticAttribute('instance', \Barebone\Config::class);
 
         // get the instance and see if its a Config type
-        $instance = \Barebone\Config::loaded();
+        $instance = \Barebone\Config::instance();
         $this->assertInstanceOf(\Noodlehaus\Config::class, $instance);
     }
 
@@ -18,7 +18,7 @@ class ConfigTest extends TestCase
     {
         // get the instance, test if it still provides the functions we use
 
-        $instance = \Barebone\Config::loaded();
+        $instance = \Barebone\Config::instance();
 
         $this->assertTrue(is_callable(array($instance, 'has')));
         $this->assertTrue(is_callable(array($instance, 'get')));

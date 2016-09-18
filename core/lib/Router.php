@@ -30,7 +30,7 @@ class Router {
 	 * Instantiate Router or return $instance
 	 * @return \Slim\App
 	 */
-	public static function getInstance() {
+	public static function instance() {
         if (null === self::$instance) {
             $configuration = [
                 'settings' => [
@@ -81,7 +81,7 @@ class Router {
 	 * Start router and parse incoming requests
 	 */
 	public static function dispatch() {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->run();
 	}
 
@@ -111,7 +111,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function get($path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->get($path, self::callback($callback));
 	}
 	
@@ -122,7 +122,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function post($path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->post($path, self::callback($callback));
 	}
 	
@@ -133,7 +133,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function put($path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->put($path, self::callback($callback));
 	}
 	
@@ -144,7 +144,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function delete($path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->delete($path, self::callback($callback));
 	}
 	
@@ -155,7 +155,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function patch($path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->patch($path, self::callback($callback));
 	}
 	
@@ -166,7 +166,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function options($path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->options($path, self::callback($callback));
 	}
 	
@@ -177,7 +177,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function any($path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->any($path, self::callback($callback));
 	}
 	
@@ -189,7 +189,7 @@ class Router {
 	 * @param mixed $callback
 	 */
 	public static function map($methods, $path, $callback) {
-		$router = self::getInstance();
+		$router = self::instance();
 		$router->map($methods, $path, self::callback($callback));
 	}
 	

@@ -15,7 +15,7 @@ class Config {
      *
      * @return \Noodlehaus\Config
      */
-    public static function loaded()
+    public static function instance()
     {
         if (null === self::$instance) {
             $path = APP_ROOT . DS . 'config.json';
@@ -38,7 +38,7 @@ class Config {
 		if (!self::has($key)) {
 			return $default;
 		}
-        return self::loaded()->get($key);
+        return self::instance()->get($key);
     }
 
     /**
@@ -49,7 +49,7 @@ class Config {
      */
     public static function has($key = '')
     {
-        return self::loaded()->has($key);
+        return self::instance()->has($key);
     }
 
     /**
@@ -59,7 +59,7 @@ class Config {
      */
     public static function all()
     {
-        return self::loaded()->all();
+        return self::instance()->all();
     }
 			
 }

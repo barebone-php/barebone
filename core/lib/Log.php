@@ -21,7 +21,7 @@ class Log {
      * Instantiate Monolog
      * @return Monolog
      */
-    public static function getInstance()
+    public static function instance()
     {
         if (null === self::$instance) {
             $logger = new Monolog(Config::get('app.id'));
@@ -49,7 +49,7 @@ class Log {
      */
     public static function info($message)
     {
-        return self::getInstance()->addInfo($message);
+        return self::instance()->addInfo($message);
     }
 
     /**
@@ -60,7 +60,7 @@ class Log {
      */
     public static function warning($message)
     {
-        return self::getInstance()->addWarning($message);
+        return self::instance()->addWarning($message);
     }
 
     /**
@@ -71,7 +71,7 @@ class Log {
      */
     public static function error($message)
     {
-        return self::getInstance()->addError($message);
+        return self::instance()->addError($message);
     }
 
 }

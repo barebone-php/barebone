@@ -8,6 +8,7 @@ use Slim\Container as ContainerInterface;
  *
  * @package Barebone
  * @property \Aura\Session\Segment $session
+ * @property \Noodlehaus\Config $config
  */
 class Controller
 {
@@ -50,7 +51,7 @@ class Controller
      */
     protected function render($template, $data = [])
     {
-        return $this->response->write(View::render($template, $data));
+        return $this->getResponse()->write(View::render($template, $data));
     }
 
     /**
@@ -63,7 +64,7 @@ class Controller
      */
     protected function renderJSON($data = [], $status = null)
     {
-        return $this->response->withJson($data, $status, JSON_PRETTY_PRINT);
+        return $this->getResponse()->withJson($data, $status, JSON_PRETTY_PRINT);
     }
 
 
@@ -77,7 +78,7 @@ class Controller
      */
     protected function redirect($url, $status = null)
     {
-        return $this->response->withRedirect($url, $status);
+        return $this->getResponse()->withRedirect($url, $status);
     }
 
     /**
@@ -89,7 +90,11 @@ class Controller
     function __get($name)
     {
         if (strtolower($name) === 'session') {
-            return Session::getInstance();
+            return Session::instance();
+        }
+
+        if (strtolower($name) === 'config') {
+            return Config::instance();
         }
 
         return null;
