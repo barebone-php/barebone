@@ -1,48 +1,55 @@
 # barebone
 
-Simple MVC Framework for building PHP web applications.
+Basic MVC Framework for building modern PHP web applications.
 
 
 ## At a glance
 
-### Configuration
+#### Configuration
 
-Setup your database connection `config.json`
+Setup your application details and database connection `config.json`
 
-### Models
+#### Models
 
 Define your models as needed in `/app/classes/Model`
 
-### Controllers
+#### Controllers
 
 Write your controller actions in `/app/classes/Controller`
 
-### Views
+#### Views
 
-Add as many views as referenced in your controllers in `/app/views`.
+Add as many views as referenced in your controllers in `/app/views`
 
-### Routing
+#### Routing
 
 Connect your controller actions to urls in `routes.php`
 
-### Logging
+#### Logging
 
 You can write from models and controllers to a log in `/app/logs/`
 
-### Frontend
+#### Assets
 
-Get gulp with "npm install" in `/app/` and develop asset code in `/app/frontend`
+Get gulp with "npm install" in `/app/`, comes preconfigured for SASS and JS
 
-### Hosting
+#### Javascript
 
-Upload everything and point your virtual host to `/public/`
+Develop your frontend code `/app/js` supported by Browserify and Babel. 
+
+#### Stylesheets
+
+By default SASS renders to CSS from `/app/sass`, but LESS is also available.
+
+#### Hosting
+
+Upload everything to Server with at least PHP 5.5 and point your virtual host to `/public/`
 
 ## Status
 
-This is an early build. There are no tests yet and the API may change.
-But i am pretty confident that i am close to finalizing the MVC. In the next
-updates i will focus on enhancements like Session handling.
- 
+This is work in progress. Tests are on the way and the API may change (slightly).
+At this point i don't expect any drastic changes anymore.
+
 ## Contributing
 
 Any PR is welcome. If you find issues, please report.
