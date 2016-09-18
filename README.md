@@ -33,6 +33,10 @@ Connect your controller actions to urls in `routes.php`
 
 You can write from models and controllers to a log in `/app/logs/`
 
+#### Database
+
+You can manage your database schema using migrations in `/app/db/`
+
 #### Assets
 
 Get gulp with "npm install" in `/app/`, comes preconfigured for SASS and JS
