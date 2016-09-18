@@ -1,6 +1,6 @@
 # Barebone
 
-Basic MVC Framework for building modern PHP web applications.
+MVC Framework for building PHP web applications
 
 ## Goals
 
