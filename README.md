@@ -2,6 +2,13 @@
 
 Basic MVC Framework for building modern PHP web applications.
 
+## Goals
+
+- Have a simple installation process: download and go
+- Be open, easy to understand and easy to extend
+- Supporting and encouraging best practices
+- Provide a solid foundation for almost anything
+- Be minimal, but with a good minimum
 
 ## At a glance
 
@@ -35,19 +42,19 @@ You can write from models and controllers to a log in `/app/logs/`
 
 #### Database
 
-You can manage your database schema using migrations in `/app/db/`
+You can manage your database schema using migrations in `/app/database/`
 
-#### Assets
+#### Frontend Assets
 
-Get gulp with "npm install" in `/app/`, comes preconfigured for SASS and JS
+Get gulp with "npm install" in `/app/frontend`, comes preconfigured for SASS and JS
 
 #### Javascript
 
-Develop your frontend code `/app/js` supported by Browserify and Babel. 
+Develop your frontend code `/app/frontend/js` supported by Browserify and Babel. 
 
 #### Stylesheets
 
-By default SASS renders to CSS from `/app/sass`, but LESS is also available.
+By default SASS renders to CSS from `/app/frontend/sass`, but LESS is also available.
 
 #### Hosting
 
@@ -57,14 +64,6 @@ Upload everything to Server with at least PHP 5.5 and point your virtual host to
 
 This is work in progress. Tests are on the way and the API may change (slightly).
 At this point i don't expect any drastic changes anymore.
-
-## Goals
-
-- Have a simple installation process: download and go
-- Be open, easy to understand and easy to extend
-- Supporting and encouraging best practices
-- Provide a solid foundation for almost anything
-- Be minimal, but with a good minimum
 
 ## Contributing
 
