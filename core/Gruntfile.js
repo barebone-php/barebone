@@ -21,5 +21,5 @@ module.exports = function(grunt) {
       tasks: ['phpunit']
     }
   });
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['phpunit', 'watch']);
 };

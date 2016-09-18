@@ -1,5 +1,9 @@
 {
   "private": true,
+  "scripts": {
+    "start": "./node_modules/.bin/grunt",
+    "test": "./vendor/bin/phpunit"
+  },
   "devDependencies": {},
   "dependencies": {
     "grunt": "^1.0.1",
