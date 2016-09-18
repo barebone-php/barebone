@@ -33,7 +33,7 @@ class Log {
      * Log "INFO" message
      *
      * @param string $message
-     * @return mixed
+     * @return Boolean Whether the record has been processed
      */
     public static function info($message)
     {
@@ -44,7 +44,7 @@ class Log {
      * Log "WARNING" message
      *
      * @param string $message
-     * @return mixed
+     * @return Boolean Whether the record has been processed
      */
     public static function warning($message)
     {
@@ -55,7 +55,7 @@ class Log {
      * Log "ERROR" message
      *
      * @param string $message
-     * @return mixed
+     * @return Boolean Whether the record has been processed
      */
     public static function error($message)
     {
