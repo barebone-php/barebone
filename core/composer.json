@@ -1,10 +1,10 @@
 {
-  "name": "m3nt0r/barebone",
+  "name": "m3nt0r/barebone-core",
   "description": "MVC Web Framework",
-  "keywords": [ ],
+  "homepage": "https://github.com/m3nt0r/barebone",
+  "version": "0.1.0",
+  "type": "library",
   "license": "MIT",
-  "minimum-stability" : "dev",
-  "prefer-stable" : true,
   "require": {
     "php": ">=5.5.0",
     "illuminate/database": "^5.3",
@@ -14,10 +14,10 @@
     "philo/laravel-blade": "^3.1",
     "monolog/monolog": "^1.21",
     "aura/session": "^2.0",
-    "whatthejeff/nyancat-phpunit-resultprinter": "^1.2",
     "robmorgan/phinx": "^0.6.4"
   },
   "require-dev": {
+    "whatthejeff/nyancat-phpunit-resultprinter": "^1.2",
     "phpunit/phpunit": "5.5.*"
   },
   "autoload": {
@@ -28,7 +28,11 @@
       "App\\": "../app/lib/"
     }
   },
-  "config": {
-    "preferred-install": "dist"
-  }
+  "authors": [
+    {
+      "name": "Kjell Bublitz",
+      "email": "kjbbtz@gmail.com",
+      "role": "Developer"
+    }
+  ]
 }

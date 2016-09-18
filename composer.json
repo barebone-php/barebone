@@ -1,0 +1,21 @@
+{
+  "name": "m3nt0r/barebone",
+  "description": "MVC Web Framework",
+  "homepage": "https://github.com/m3nt0r/barebone",
+  "version": "0.1.0",
+  "type": "project",
+  "license": "MIT",
+  "minimum-stability" : "dev",
+  "prefer-stable" : true,
+  "config": {
+    "preferred-install": "dist"
+  },
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@composer install -d core/"
+    ]
+  }
+}
