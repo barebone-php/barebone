@@ -8,7 +8,6 @@ use Slim\Container as ContainerInterface;
  *
  * @package Barebone
  * @property \Aura\Session\Segment $session
- * @property \Noodlehaus\Config $config
  */
 class Controller
 {
@@ -30,6 +29,11 @@ class Controller
     protected $response;
 
     /**
+     * @var \Noodlehaus\Config
+     */
+    protected $config;
+
+    /**
      * Controller constructor.
      *
      * @param ContainerInterface $ci
@@ -39,6 +43,7 @@ class Controller
         $this->request = $ci->get('request');
         $this->response = $ci->get('response');
         $this->env = $ci->get('environment');
+        $this->config = Config::instance();
     }
 
     /**
@@ -90,11 +95,8 @@ class Controller
     function __get($name)
     {
         if ($name === 'session') {
+            // start or resume session on use
             return Session::instance();
-        }
-
-        if ($name === 'config') {
-            return Config::instance();
         }
 
         return null;
