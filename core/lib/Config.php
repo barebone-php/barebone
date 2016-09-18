@@ -18,7 +18,12 @@ class Config {
     public static function instance()
     {
         if (null === self::$instance) {
-            $path = APP_ROOT . DS . 'config.json';
+            if (!defined('APP_ROOT')) {
+                $path = __DIR__ . '/../../app/config.json';
+            } else {
+                $path = APP_ROOT . 'config.json';
+            }
+
             $loader = new Loader($path);
 
             self::$instance = $loader;
