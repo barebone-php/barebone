@@ -1,4 +1,5 @@
 <?php
+use Barebone\Log;
 use PHPUnit\Framework\TestCase;
 
 use \Slim\Container as ContainerInterface;
@@ -32,16 +33,30 @@ class ControllerTest extends TestCase
     public function testControllerLogTrait()
     {
         $controller = new Controller( self::$container );
+        $current_log = file_get_contents(Log::getFilepath());
 
-        $log_was_written = $controller->log('phpunit testControllerTrait');
+        // runtime only string
+        $test_string = 'phpunit' . time();
+
+        // test writing
+        $log_was_written = $controller->log($test_string, 'info');
         $this->assertTrue($log_was_written);
 
-        $log_was_written = $controller->log('phpunit testControllerTrait', 'warn');
+        $log_was_written = $controller->log($test_string, 'warn');
         $this->assertTrue($log_was_written);
 
-        $log_was_written = $controller->log('phpunit testControllerTrait', 'error');
+        $log_was_written = $controller->log($test_string, 'error');
         $this->assertTrue($log_was_written);
 
+        // test if updated log contains string with set severity.
+        $updated_log = file_get_contents(Log::getFilepath());
+
+        $this->assertContains('INFO: ' . $test_string, $updated_log, 'Severity "info" was written');
+        $this->assertContains('WARNING: ' . $test_string, $updated_log, 'Severity "warn" was written');
+        $this->assertContains('ERROR: ' . $test_string, $updated_log,' Severity "error" was written');
+
+        // restore application log
+        file_put_contents(Log::getFilepath(), $current_log);
     }
 
     public function testLazySessionProperty()
