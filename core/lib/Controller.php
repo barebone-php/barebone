@@ -89,11 +89,11 @@ class Controller
      */
     function __get($name)
     {
-        if (strtolower($name) === 'session') {
+        if ($name === 'session') {
             return Session::instance();
         }
 
-        if (strtolower($name) === 'config') {
+        if ($name === 'config') {
             return Config::instance();
         }
 
