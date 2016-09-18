@@ -1,6 +1,8 @@
 <?php
 namespace Barebone;
 
+use Slim\Container as ContainerInterface;
+
 /**
  * Class Controller
  *
@@ -9,7 +11,6 @@ namespace Barebone;
  */
 class Controller
 {
-
     /**
      * Expose Traits
      */
@@ -33,9 +34,9 @@ class Controller
     /**
      * Controller constructor.
      *
-     * @param \Slim\Container $ci
+     * @param ContainerInterface $ci
      */
-    public function __construct(\Slim\Container $ci)
+    public function __construct(ContainerInterface $ci)
     {
         $this->request = $ci->get('request');
         $this->response = $ci->get('response');
@@ -95,5 +96,29 @@ class Controller
         }
 
         return null;
+    }
+
+    /**
+     * @return \Slim\Http\Environment
+     */
+    public function getEnvironment()
+    {
+        return $this->env;
+    }
+
+    /**
+     * @return \Slim\Http\Request
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @return \Slim\Http\Response
+     */
+    public function getResponse()
+    {
+        return $this->response;
     }
 }
