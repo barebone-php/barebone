@@ -10,6 +10,10 @@ MVC Framework for building PHP web applications
 - Provide a solid foundation for almost anything
 - Be minimal, but with a good minimum
 
+## Installation
+
+    composer create-project barebone/barebone [YOUR_PROJECT_NAME]
+
 ## At a glance
 
 #### Configuration
