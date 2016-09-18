@@ -2,7 +2,7 @@
   "name": "barebone/barebone-core",
   "description": "MVC Web Framework",
   "keywords": ["framework", "mvc", "barebone"],
-  "type": "project",
+  "type": "library",
   "license": "MIT",
   "minimum-stability" : "dev",
   "prefer-stable" : true,
@@ -25,7 +25,9 @@
     "philo/laravel-blade": "^3.1",
     "monolog/monolog": "^1.21",
     "aura/session": "^2.0",
-    "robmorgan/phinx": "^0.6.4"
+    "robmorgan/phinx": "^0.6.4",
+    "ircmaxell/random-lib": "^1.2",
+    "illuminate/pagination": "^5.3"
   },
   "require-dev": {
     "whatthejeff/nyancat-phpunit-resultprinter": "^1.2",
@@ -38,10 +40,5 @@
       "App\\Model\\": "../app/models/",
       "App\\": "../app/lib/"
     }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "@composer dump-autoload -o"
-    ]
   }
 }

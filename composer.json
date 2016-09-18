@@ -8,7 +8,8 @@
   "prefer-stable" : true,
   "scripts": {
     "post-create-project-cmd": [
-      "@composer install -d core/"
+      "@composer install -d core/",
+      "@composer dump-autoload -o -d core/"
     ]
   },
   "require": {
