@@ -1,4 +1,4 @@
-# barebone
+# Barebone
 
 Basic MVC Framework for building modern PHP web applications.
 
@@ -53,6 +53,14 @@ Upload everything to Server with at least PHP 5.5 and point your virtual host to
 
 This is work in progress. Tests are on the way and the API may change (slightly).
 At this point i don't expect any drastic changes anymore.
+
+## Goals
+
+- Have a simple installation process: download and go
+- Be open, easy to understand and easy to extend
+- Supporting and encouraging best practices
+- Provide a solid foundation for almost anything
+- Be minimal, but with a good minimum
 
 ## Contributing
 
