@@ -29,7 +29,7 @@ class ControllerTest extends TestCase
     }
 
 
-    public function testControllerTrait()
+    public function testControllerLogTrait()
     {
         $controller = new Controller( self::$container );
 
@@ -43,6 +43,24 @@ class ControllerTest extends TestCase
         $this->assertTrue($log_was_written);
 
     }
+
+    public function testLazySessionProperty()
+    {
+        $controller = new Controller( self::$container );
+
+        // the session property doesn't exist by default
+        $this->assertClassNotHasAttribute('session', Controller::class);
+
+        // if accessed, __get returns the Session interface.
+        $session = $controller->session;
+        $this->assertInstanceOf(\Aura\Session\Segment::class, $session);
+
+        // test expected session API
+        $this->assertTrue(is_callable(array($session, 'set')));
+        $this->assertTrue(is_callable(array($session, 'get')));
+        $this->assertTrue(is_callable(array($session, 'clear')));
+    }
+
 
 
 }
