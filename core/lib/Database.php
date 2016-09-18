@@ -42,7 +42,7 @@ class Database {
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-        ], Config::get('mysql', []));
+        ], Config::read('mysql', []));
     }
 
 	/**

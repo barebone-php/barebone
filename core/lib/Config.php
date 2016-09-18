@@ -1,27 +1,34 @@
 <?php
 namespace Barebone;
 
-use \Noodlehaus\Config as Loader;
+use \Noodlehaus\Config as ConfigLoader;
 
-class Config
+class Config extends ConfigLoader
 {
-    private static $defaults = [
-        "app"   => [
-            "id"          => "my-app",
-            "name"        => "My Application",
-            "environment" => "development",
-            "debug"       => true
-        ],
-        "mysql" => [
-            "host"      => "localhost",
-            "database"  => "test",
-            "username"  => "mysql_user",
-            "password"  => "mysql_pass",
-            "port"      => "3306",
-            "charset"   => "utf8",
-            "collation" => "utf8_unicode_ci"
-        ]
-    ];
+    /**
+     * @return array
+     * @codeCoverageIgnore
+     */
+    protected function getDefaults()
+    {
+        return [
+            "app"   => [
+                "id"          => "my-app",
+                "name"        => "My Application",
+                "environment" => "development",
+                "debug"       => true
+            ],
+            "mysql" => [
+                "host"      => "localhost",
+                "database"  => "test",
+                "username"  => "mysql_user",
+                "password"  => "mysql_pass",
+                "port"      => "3306",
+                "charset"   => "utf8",
+                "collation" => "utf8_unicode_ci"
+            ]
+        ];
+    }
 
     /**
      * @var \Noodlehaus\Config
@@ -45,10 +52,7 @@ class Config
             if (!file_exists($path)) {
                 file_put_contents($path, json_encode(self::$defaults, JSON_PRETTY_PRINT));
             }
-
-            $loader = new Loader($path);
-
-            self::$instance = $loader;
+            self::$instance = new static( $path );
         }
         return self::$instance;
     }
@@ -61,9 +65,12 @@ class Config
      *
      * @return mixed
      */
-    public static function get($key = '', $default = null)
+    public static function read($key = '', $default = null)
     {
-        if (!self::has($key)) {
+        if (empty($key)) {
+            return self::instance()->all();
+        }
+        if (!self::exists($key)) {
             return $default;
         }
         return self::instance()->get($key);
@@ -76,19 +83,9 @@ class Config
      *
      * @return boolean
      */
-    public static function has($key = '')
+    public static function exists($key = '')
     {
         return self::instance()->has($key);
-    }
-
-    /**
-     * Read all configuration values
-     *
-     * @return mixed
-     */
-    public static function all()
-    {
-        return self::instance()->all();
     }
 
 }

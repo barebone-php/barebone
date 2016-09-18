@@ -2,8 +2,8 @@
 require __DIR__ . '/../../core/vendor/autoload.php';
 use \Barebone\Config;
 
-$environment = Config::get('app.environment', 'development');
-$config = Config::get('mysql', []);
+$environment = Config::read('app.environment', 'development');
+$config = Config::read('mysql', []);
 
 return array(
     "paths" => array(

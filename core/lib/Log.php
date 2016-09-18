@@ -24,7 +24,7 @@ class Log {
     public static function instance()
     {
         if (null === self::$instance) {
-            $logger = new Monolog(Config::get('app.id'));
+            $logger = new Monolog(Config::read('app.id'));
             $file_handler = new StreamHandler(self::getFilepath());
             $logger->pushHandler($file_handler);
     

@@ -27,38 +27,34 @@ class ConfigTest extends TestCase
 
     public function testConfigGet()
     {
-        // no property key = null
-        $result = \Barebone\Config::get();
-        $this->assertNull($result);
-
         // property missing = null
-        $result = \Barebone\Config::get('I_DONT_EXIST');
+        $result = \Barebone\Config::read('I_DONT_EXIST');
         $this->assertNull($result);
 
         // property exists = array, in this case.
-        $result = \Barebone\Config::get('mysql');
+        $result = \Barebone\Config::read('mysql');
         $this->assertArrayHasKey('host', $result);
 
         // property exists = string, in this case.
-        $result = \Barebone\Config::get('mysql.host');
+        $result = \Barebone\Config::read('mysql.host');
         $this->assertEquals('localhost', $result);
     }
 
     public function testConfigHas()
     {
         // property missing = false
-        $result = \Barebone\Config::has('I_DONT_EXIST');
+        $result = \Barebone\Config::exists('I_DONT_EXIST');
         $this->assertFalse($result);
 
         // property exists = true
-        $result = \Barebone\Config::has('mysql');
+        $result = \Barebone\Config::exists('mysql');
         $this->assertTrue($result);
     }
 
     public function testConfigAll()
     {
-        // return array with "all keys"
-        $result = \Barebone\Config::all();
+        // read without "key" = return array with "all keys"
+        $result = \Barebone\Config::read();
         $this->assertTrue(is_array($result));
 
     }
