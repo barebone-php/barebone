@@ -14,7 +14,7 @@ Basic MVC Framework for building modern PHP web applications.
 
 #### Configuration
 
-Setup your application details and database connection `config.json`
+Setup your application details and database connection `/app/config.json`
 
 #### Models
 
@@ -34,7 +34,7 @@ Add as many views as referenced in your controllers in `/app/views`
 
 #### Routing
 
-Connect your controller actions to urls in `routes.php`
+Connect your controller "actions" to URLs in `/app/routes.php`
 
 #### Logging
 
