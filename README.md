@@ -4,7 +4,7 @@ MVC Framework for building PHP web applications
 
 ## Installation
 
-    composer create-project barebone/barebone [YOUR_PROJECT_NAME]
+    composer create-project barebone/barebone --no-dev [YOUR_PROJECT_NAME]
 
 ## At a glance
 
