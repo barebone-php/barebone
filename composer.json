@@ -2,6 +2,7 @@
   "name": "barebone/barebone",
   "description": "MVC Web Framework",
   "keywords": ["framework", "mvc", "barebone-php"],
+  "homepage": "https://github.com/barebone-php",
   "type": "project",
   "license": "MIT",
   "minimum-stability" : "dev",
