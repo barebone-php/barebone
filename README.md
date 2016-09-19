@@ -1,6 +1,6 @@
 # Barebone
 
-MVC Framework for building PHP web applications
+MVC framework for building PHP web applications
 
 ## Installation
 
