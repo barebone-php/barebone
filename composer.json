@@ -18,7 +18,7 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "barebone/barebone-core": "^0.1.0"
+    "barebone/barebone-core": "0.1.*"
   },
   "autoload": {
     "psr-4": {
