@@ -12,8 +12,7 @@ define('PROJECT_ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 | Require CORE / bootstrap
 |--------------------------------------------------------------------------
 */
-require_once(PROJECT_ROOT . 'core' . DIRECTORY_SEPARATOR . 'bootstrap.php');
-
+require_once(PROJECT_ROOT . 'vendor/barebone/barebone-core/bootstrap.php');
 
 /*
 |--------------------------------------------------------------------------
