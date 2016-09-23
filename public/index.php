@@ -6,10 +6,9 @@
 */
 define('PROJECT_ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 
-
 /*
 |--------------------------------------------------------------------------
-| Require CORE / bootstrap
+| Require bootstrap and libraries
 |--------------------------------------------------------------------------
 */
 require_once(PROJECT_ROOT . 'vendor/barebone/barebone-core/bootstrap.php');
@@ -19,4 +18,11 @@ require_once(PROJECT_ROOT . 'vendor/barebone/barebone-core/bootstrap.php');
 | Listen for Application Routes
 |--------------------------------------------------------------------------
 */
-\Barebone\Router::dispatch();
+$response = \Barebone\Router::dispatch();
+
+/*
+|--------------------------------------------------------------------------
+| Send Controller Response to Client
+|--------------------------------------------------------------------------
+*/
+\Barebone\Response::send( $response );
