@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+
 html, body {
   margin: 0;
-  padding: 0;
 }
 
 body {
@@ -11,11 +15,68 @@ body {
   background-color: #fff
 }
 
-.container {
-  margin: 0 auto;
-  width: 65%;
+a {
+  color: orangered;
 }
 
-h1 {
-  margin-top: 40px;
+#app {
+  font-size: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+h1,h2,h3,h4 {
+  font-size: 180%;
+  margin: 0 0 15px;
+}
+
+#header {
+  padding: 15px 30px;
+  background: #000;
+  border-bottom: 4px solid orangered;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  h1 {
+    margin: 0;
+    font-size: 110%;
+  }
+}
+
+#content {
+  background: #fff;
+  padding: 20px 30px 15px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input, button {
+  font-size: 100%;
+  padding: 8px 10px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  color: #000;
+  outline: 0;
+  &:hover, &:focus {
+    border-bottom-color: orangered;
+  }
+}
+
+button {
+  border: 1px solid #eee;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    color: orangered;
+  }
 }
