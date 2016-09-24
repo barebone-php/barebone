@@ -4,7 +4,16 @@ namespace App\Controller;
 use Barebone\Request;
 use Barebone\Response;
 
-class Example extends AppController
+/**
+ * Class ExampleController
+ *
+ * This file demonstrates some of the response and rendering features.
+ * You are free to delete this file or create your own version.
+ *
+ * @author  Kjell Bublitz <kjbbtz@gmail.com>
+ * @package App\Controller
+ */
+class ExampleController extends AppController
 {
     /**
      * Add any code that will run before any action is called.
